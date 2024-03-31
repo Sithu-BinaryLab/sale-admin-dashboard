@@ -1,0 +1,133 @@
+<div class="flex flex-col gap-y-3">
+    <div class="flex flex-col rounded-xl gap-y-2 w-full bg-white py-3 px-6 font-semibold">
+        <div class="flex ">
+            <div class="flex flex-col">
+                <span class="font-bold">Today's Sales</span>
+                <span class="text-xs">Sales Summary</span>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="flex grid grid-cols-4 gap-x-6">
+            <div class="rounded-xl py-4 px-6 bg-lightPink flex gap-y-2 flex-col">
+                <div class="flex justify-between w-full">
+                    <i
+                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                </div>
+                <span class="text-right">Total Sales</span>
+                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+            </div>
+            <div class="rounded-xl p-4 bg-lightGreen flex gap-y-2 flex-col">
+                <div class="flex justify-between w-full">
+                    <i
+                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                </div>
+                <span class="text-right">Total Sales</span>
+                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+            </div>
+            <div class="rounded-xl p-4 bg-lightPurple flex gap-y-2 flex-col">
+                <div class="flex justify-between w-full">
+                    <i
+                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                </div>
+                <span class="text-right">Total Sales</span>
+                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+            </div>
+            <div class="rounded-xl p-4 bg-lightOrange flex gap-y-2 flex-col">
+                <div class="flex justify-between w-full">
+                    <i
+                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                </div>
+                <span class="text-right">Total Sales</span>
+                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-7 gap-x-4">
+        <div class="flex flex-col col-span-2 rounded-xl gap-y-2 w-full bg-white py-3 px-6 font-semibold">
+            <span class="font-bold">Weekly Sales</span>
+            <div class="block w-full">
+                <canvas id="barCanvas"></canvas>
+            </div>
+        </div>
+        <div class="flex flex-col rounded-xl gap-y-2 h-fit w-full bg-white py-4 px-6 font-semibold">
+            <span class="font-bold">Sales</span>
+            <div class="block w-full max-h-1/2">
+                <canvas id="lineCanvas"></canvas>
+            </div>
+            <div class="flex flex-col gap-y-1">
+                <span class="text-xl font-semibold">446</span>
+                <span class="text-sm font-semibold">Number of sales</span>
+                <span class="text-xs">36%</span>
+            </div>
+        </div>
+        <div class="flex flex-col rounded-xl gap-y-2 h-fit w-full bg-white py-4 px-6 font-semibold">
+            <span class="font-bold">Profit</span>
+            <div class="block w-full max-h-1/2">
+                <canvas id="lineCanvas2"></canvas>
+            </div>
+            <div class="flex flex-col gap-y-1">
+                <span class="text-xl font-semibold">446</span>
+                <span class="text-sm font-semibold">Number of sales</span>
+                <span class="text-xs">36%</span>
+            </div>
+        </div>
+        <div class="flex flex-col col-span-3 h-fit rounded-xl gap-y-2 w-full bg-white py-4 px-6 font-semibold">
+            <span class="font-bold">Product Class</span>
+            <div class="block w-full flex flex-col h-fit">
+                <canvas id="doughnutCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid grid-cols-6 gap-x-4">
+        <div class="flex flex-col col-span-2 rounded-xl gap-y-2 w-full bg-white py-3 px-6 font-semibold">
+            <span class="font-bold">Customer Satisfication</span>
+            <div class="flex w-full">
+                <canvas id="twoLineCanvas" class="w-full"></canvas>
+            </div>
+        </div>
+        <div class="flex flex-col col-span-3 rounded-xl gap-y-2 w-full bg-white py-4 px-6 font-semibold">
+            <div class="flex justify-between">
+                <div>Recent Orders</div> 
+                <div>See all</div> 
+            </div>
+            
+           <table class="">
+        <thead>
+          <tr class="bg-slate-200 rounded-xl">
+            <th class="">Profile</th>
+            <th class="">City</th>
+            <th class="">Date</th>
+            <th class="">Status</th>
+            <th class="">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.profile }}</td>
+            <td>{{ item.city }}</td>
+            <td>{{ item.date }}</td>
+            <td>{{ item.status }}</td>
+            <td>{{ item.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+        </div>
+        <div class="flex flex-col rounded-xl gap-y-2 w-full bg-white py-4 px-6 font-semibold">
+            <span class="font-bold">Sales target</span>
+            <div class="block w-full">
+                <canvas id="pieCanvas"></canvas>
+            </div>
+            <span class="font-semibold text-md text-center">Achieved</span>
+        </div>
+    </div>
+
+</div>
