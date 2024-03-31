@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import { orderItems } from './order-items';
 import { Chart, registerables } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
@@ -12,7 +11,6 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit {
-  items = orderItems;
   constructor() {
     Chart.register(...registerables, ChartDataLabels);
   }
