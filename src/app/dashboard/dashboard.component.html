@@ -13,8 +13,8 @@
             <div class="rounded-xl py-4 px-6 bg-lightPink flex gap-y-2 flex-col">
                 <div class="flex justify-between w-full">
                     <i
-                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
-                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                        class="fa-solid fa-cube text-white flex items-center bg-pinkMedium px-3 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">€ 37,446</span>
                 </div>
                 <span class="text-right">Total Sales</span>
                 <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
@@ -22,29 +22,29 @@
             <div class="rounded-xl p-4 bg-lightGreen flex gap-y-2 flex-col">
                 <div class="flex justify-between w-full">
                     <i
-                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
-                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                        class="fa-regular fa-file-lines text-white flex items-center bg-primary px-3 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">€ 365</span>
                 </div>
-                <span class="text-right">Total Sales</span>
-                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+                <span class="text-right">Total orders</span>
+                <span class="text-xs text-blueDark text-right">+27% from yesterday</span>
             </div>
             <div class="rounded-xl p-4 bg-lightPurple flex gap-y-2 flex-col">
                 <div class="flex justify-between w-full">
                     <i
-                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
-                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                        class="fa-solid fa-user text-white flex items-center bg-purpleMedium px-3 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">€ 36</span>
                 </div>
-                <span class="text-right">Total Sales</span>
-                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+                <span class="text-right">News customers</span>
+                <span class="text-xs text-blueDark text-right">+8% from yesterday</span>
             </div>
             <div class="rounded-xl p-4 bg-lightOrange flex gap-y-2 flex-col">
                 <div class="flex justify-between w-full">
                     <i
-                        class="fa-solid fa-house text-white flex items-center bg-pinkMedium px-2 py-5 fa-lg rounded-full"></i>
-                    <span class="font-bold flex items-center text-2xl text-right">$ 37,446</span>
+                        class="fa-solid fa-coins text-white flex items-center bg-orangeMedium px-3 py-5 fa-lg rounded-full"></i>
+                    <span class="font-bold flex items-center text-2xl text-right">€ 16,285</span>
                 </div>
-                <span class="text-right">Total Sales</span>
-                <span class="text-xs text-blueDark text-right">+80% from yesterday</span>
+                <span class="text-right">Total Earnings</span>
+                <span class="text-xs text-blueDark text-right">+23% from yesterday</span>
             </div>
         </div>
     </div>
@@ -53,13 +53,13 @@
         <div class="flex flex-col col-span-2 rounded-xl gap-y-2 w-full bg-white py-3 px-6 font-semibold">
             <span class="font-bold">Weekly Sales</span>
             <div class="block w-full">
-                <canvas id="barCanvas"></canvas>
+                <canvas #barCanvas id="barCanvas"></canvas>
             </div>
         </div>
         <div class="flex flex-col rounded-xl gap-y-2 h-fit w-full bg-white py-4 px-6 font-semibold">
             <span class="font-bold">Sales</span>
             <div class="block w-full max-h-1/2">
-                <canvas id="lineCanvas"></canvas>
+                <canvas #lineCanvas id="lineCanvas"></canvas>
             </div>
             <div class="flex flex-col gap-y-1">
                 <span class="text-xl font-semibold">446</span>
@@ -96,22 +96,36 @@
         </div>
         <div class="flex flex-col col-span-3 rounded-xl gap-y-2 w-full bg-white py-4 px-6 font-semibold">
             <div class="flex justify-between">
-                <div>Recent Orders</div> 
-                <div>See all</div> 
+                <div class="font-bold">Recent Orders</div>
+                <div class="text-lightBlue text-sm">See all</div>
             </div>
-            
-           <table class="">
-        <thead>
-          <tr class="bg-slate-200 rounded-xl">
-            <th class="">Profile</th>
-            <th class="">City</th>
-            <th class="">Date</th>
-            <th class="">Status</th>
-            <th class="">Price</th>
-          </tr>
-        </thead>
-      
-      </table>
+
+            <table class="w-full">
+                <thead class="">
+                    <tr class="bg-slate-200 rounded-lg text-md">
+                        <th class="font-semibold ">Profile</th>
+                        <th class="font-semibold">City</th>
+                        <th class="font-semibold">Date</th>
+                        <th class="font-semibold">Status</th>
+                        <th class="font-semibold">Price</th>
+                    </tr>
+                </thead>
+                <tbody class="font-medium text-sm">
+                    <tr *ngFor="let item of items">
+                        <td class="flex gap-x-2">
+                            <span>
+                                <img src="../../assets/images/profile.jpeg" alt="profile image"
+                                    class="w-10 h-10 rounded-lg">
+                            </span>
+                            <span class="items-center flex">{{ item.profile }}</span>
+                        </td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.date }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.price }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="flex flex-col rounded-xl gap-y-2 w-full bg-white py-4 px-6 font-semibold">
             <span class="font-bold">Sales target</span>
